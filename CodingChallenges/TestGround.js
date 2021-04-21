@@ -1,12 +1,18 @@
-var str = ";;;SILAS";
-//var res = str.substr(1, 25);
-var  check = str.startsWith()
-const  allowedLetters =  "^[0-9_]";
+var str = "@_Sila5633";
 
-//str.match(/[a-z]/i)
+var letterNumber = /^[0-9a-zA-Z_]+$/;
+
+function  checkString(str){
+    if (str.match(letterNumber))
+    {
+        return true
+    }
+    else{
+        return false;
+    }
+}
 
 
-//console.log(res.length);
-console.log(allowedLetters);
-console.log(check);
-console.log(str.match(/[a-z]/i));
+console.log(letterNumber);
+console.log(str.charAt(str.length-1));
+console.log(checkString(str));
