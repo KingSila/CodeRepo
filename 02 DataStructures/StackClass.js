@@ -1,24 +1,21 @@
 
 function Stack() {
-    var collection = [];
-    this.print = function() {
-      console.log(collection);
-      this.count = 0;
-      this.storage = {};
-    
-    };
-    
+    constructor() {
+        this.collection = [];
+      }
+
+      print() {
+        console.log(this.collection);
+      }
+
+
     this.push = function(value)
     {
-        this.storage[this.count] = value;
-        this.count++;
+        return this.collection.push(value);
     }
     this.pop = function(){
-        if(this.count ==0){
-            return undefined
-        }
-        this.count--;
-        delete this.storage[this.count];
+        
+        return this.collection.pop();
     }
     this.size = function(){
         return this.count;
@@ -30,14 +27,16 @@ function Stack() {
         return this.storage[this.count-1];
     }
 
-     function isEmpty(){
-        return this.count ==0;
+     this.isEmpty = function(){
+       
+        return this.collection.length == 0;
      }
 
-     function clear(){
-         for(var i = this.count--; i < this.count; i--)
-         {
-            delete this.storage[this.count];
-         }
+     this.clear = function(){
+        
+      return this.collection.length == 0;
+
      }
-  }
+}
+
+  var myStack = new Stack();
